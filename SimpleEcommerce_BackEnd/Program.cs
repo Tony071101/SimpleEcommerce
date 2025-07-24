@@ -9,12 +9,11 @@ using SimpleEcommerce.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using SimpleEcommerce.Utilities; // Thêm dòng này để truy cập DataSeeder
+using SimpleEcommerce.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -93,6 +92,20 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+// Configure CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        builder =>
+        {
+            // THAY THẾ 'http://127.0.0.1:5500', 'http://localhost:5500' BẰNG ĐỊA CHỈ FRONTEND THỰC TẾ CỦA BẠN
+            builder.WithOrigins("https://127.0.0.1:5500", "https://localhost:5500", "https://localhost:3000") // Ví dụ cho Live Server và các cổng phổ biến
+                   .AllowAnyHeader() // Cho phép tất cả các header từ request
+                   .AllowAnyMethod() // Cho phép tất cả các phương thức HTTP (GET, POST, PUT, DELETE,...)
+                   .AllowCredentials(); // Quan trọng nếu bạn xử lý cookie hoặc thông tin xác thực (ví dụ: JWT token trong header Authorization)
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -108,9 +121,11 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseCors("AllowFrontend");
+
 app.MapControllers();
 
-// Gọi DataSeeder ở đây
+//DataSeeder
 await DataSeeder.SeedRolesAndAdminUserAsync(app.Services);
 
 app.Run();
