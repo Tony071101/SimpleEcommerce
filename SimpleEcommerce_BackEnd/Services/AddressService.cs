@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using SimpleEcommerce.Data;
-using SimpleEcommerce.Models;
-using SimpleEcommerce.Models.Entities;
-using SimpleEcommerce.Services.Interfaces;
+using SimpleEcommerce_BackEnd.Data;
+using SimpleEcommerce_BackEnd.Models;
+using SimpleEcommerce_BackEnd.Models.Entities;
+using SimpleEcommerce_BackEnd.Services.Interfaces;
 
-namespace SimpleEcommerce.Services
+namespace SimpleEcommerce_BackEnd.Services
 {
     public class AddressService : IAddressService
     {

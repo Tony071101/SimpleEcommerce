@@ -1,11 +1,11 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SimpleEcommerce.Models.Dtos.Category;
-using SimpleEcommerce.Models.Entities;
-using SimpleEcommerce.Services.Interfaces;
+using SimpleEcommerce_BackEnd.Models.Dtos.Category;
+using SimpleEcommerce_BackEnd.Models.Entities;
+using SimpleEcommerce_BackEnd.Services.Interfaces;
 
-namespace SimpleEcommerce.Controllers
+namespace SimpleEcommerce_BackEnd.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -30,7 +30,7 @@ namespace SimpleEcommerce.Controllers
         }
 
         [HttpGet("{id:guid}")]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<CategoryResponseDto>> GetCategoryById(Guid id)
         {
             var category = await categoryService.GetCategoryByIdAsync(id);

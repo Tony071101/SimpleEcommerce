@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SimpleEcommerce.Data;
-using SimpleEcommerce.Models.Entities;
+using SimpleEcommerce_BackEnd.Data;
+using SimpleEcommerce_BackEnd.Models.Entities;
 
-namespace SimpleEcommerce.Utilities
+namespace SimpleEcommerce_BackEnd.Utilities
 {
     public static class DataSeeder
     {

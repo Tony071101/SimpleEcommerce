@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleEcommerce.Models.Dtos.User
+namespace SimpleEcommerce_BackEnd.Models.Dtos.User
 {
     public class UserUpdateDto
     {

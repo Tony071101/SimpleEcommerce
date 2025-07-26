@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleEcommerce.Models.Dtos.Cart
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Cart
 {
     public class CartItemRequestDto
     {

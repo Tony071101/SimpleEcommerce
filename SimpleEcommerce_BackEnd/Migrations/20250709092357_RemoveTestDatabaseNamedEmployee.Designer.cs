@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SimpleEcommerce.Data;
+using SimpleEcommerce_BackEnd.Data;
 
 #nullable disable
 
-namespace SimpleEcommerce.Migrations
+namespace SimpleEcommerce_BackEnd.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20250709092357_RemoveTestDatabaseNamedEmployee")]

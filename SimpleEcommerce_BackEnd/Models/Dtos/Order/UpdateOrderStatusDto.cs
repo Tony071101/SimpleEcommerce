@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleEcommerce.Models.Dtos.Order
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Order
 {
     public class UpdateOrderStatusDto
     {

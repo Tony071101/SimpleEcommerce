@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SimpleEcommerce.Models;
-using SimpleEcommerce.Models.Entities;
+using SimpleEcommerce_BackEnd.Models;
+using SimpleEcommerce_BackEnd.Models.Entities;
 
-namespace SimpleEcommerce.Services.Interfaces
+namespace SimpleEcommerce_BackEnd.Services.Interfaces
 {
     public interface IOrderService
     {

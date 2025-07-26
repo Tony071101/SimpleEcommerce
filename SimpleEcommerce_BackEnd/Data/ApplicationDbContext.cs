@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using SimpleEcommerce.Models.Entities;
+using SimpleEcommerce_BackEnd.Models.Entities;
 
-namespace SimpleEcommerce.Data
+namespace SimpleEcommerce_BackEnd.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     {
@@ -73,12 +73,12 @@ namespace SimpleEcommerce.Data
                 .HasKey(t => t.TalentID);
 
             modelBuilder.Entity<Talent>()
-                .Property(t => t.Name)
+                .Property(t => t.TalentName)
                 .IsRequired()
                 .HasMaxLength(100);
 
             modelBuilder.Entity<Talent>()
-                .Property(t => t.Generation)
+                .Property(t => t.TalentGeneration)
                 .HasMaxLength(50);
 
             // ADDRESS

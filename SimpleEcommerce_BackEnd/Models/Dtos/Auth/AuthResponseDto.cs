@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SimpleEcommerce.Models.Dtos.Auth
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Auth
 {
     public class AuthResponseDto
     {

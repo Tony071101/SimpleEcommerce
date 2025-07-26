@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SimpleEcommerce.Models.Entities
+namespace SimpleEcommerce_BackEnd.Models.Entities
 {
     public class OrderDetail
     {

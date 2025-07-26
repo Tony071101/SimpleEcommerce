@@ -12,8 +12,8 @@ using SimpleEcommerce_BackEnd.Data;
 namespace SimpleEcommerce_BackEnd.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250701104429_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250724100142_ModifyTalentPropertiesNameInDB")]
+    partial class ModifyTalentPropertiesNameInDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -228,31 +228,6 @@ namespace SimpleEcommerce_BackEnd.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("SimpleEcommerce.Models.Entities.Employee", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Employees");
-                });
-
             modelBuilder.Entity("SimpleEcommerce.Models.Entities.Order", b =>
                 {
                     b.Property<Guid>("OrderID")
@@ -353,12 +328,12 @@ namespace SimpleEcommerce_BackEnd.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Generation")
+                    b.Property<string>("TalentGeneration")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("TalentName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -407,10 +382,6 @@ namespace SimpleEcommerce_BackEnd.Migrations
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");

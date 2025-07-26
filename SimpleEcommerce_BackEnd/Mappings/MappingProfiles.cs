@@ -1,14 +1,15 @@
 using AutoMapper;
-using SimpleEcommerce.Models.Entities;
-using SimpleEcommerce.Models.Dtos.Address;
-using SimpleEcommerce.Models.Dtos.Cart;
-using SimpleEcommerce.Models.Dtos.Category;
-using SimpleEcommerce.Models.Dtos.Order;
-using SimpleEcommerce.Models.Dtos.Product;
-using SimpleEcommerce.Models.Dtos.User;
-using SimpleEcommerce.Models.Dtos.Auth;
+using SimpleEcommerce_BackEnd.Models.Entities;
+using SimpleEcommerce_BackEnd.Models.Dtos.Address;
+using SimpleEcommerce_BackEnd.Models.Dtos.Cart;
+using SimpleEcommerce_BackEnd.Models.Dtos.Category;
+using SimpleEcommerce_BackEnd.Models.Dtos.Order;
+using SimpleEcommerce_BackEnd.Models.Dtos.Product;
+using SimpleEcommerce_BackEnd.Models.Dtos.User;
+using SimpleEcommerce_BackEnd.Models.Dtos.Auth;
+using SimpleEcommerce_BackEnd.Models.Dtos.Talent;
 
-namespace SimpleEcommerce.Mappings
+namespace SimpleEcommerce_BackEnd.Mappings
 {
     public class MappingProfiles : Profile
     {
@@ -52,10 +53,16 @@ namespace SimpleEcommerce.Mappings
                 .ForMember(dest => dest.AddressID, opt => opt.Ignore()) // ID không được cập nhật từ DTO
                 .ForMember(dest => dest.UserID, opt => opt.Ignore());   // UserID không được cập nhật từ DTO
             CreateMap<Address, AddressResponseDto>();
+
             // --- Category Mappings ---
             CreateMap<CreateCategoryDto, Category>()
                 .ForMember(dest => dest.CategoryID, opt => opt.Ignore()); // CategoryID sẽ được tạo trong service
             CreateMap<Category, CategoryResponseDto>();
+
+            // --- Talent Mappings ---
+            CreateMap<CreateTalentDto, Talent>()
+                .ForMember(dest => dest.TalentID, opt => opt.Ignore()); // TalentID sẽ được tạo trong service
+            CreateMap<Talent, TalentResponseDto>();
 
             // --- Product Mappings ---
             CreateMap<CreateProductRequestDto, Product>()
@@ -65,7 +72,7 @@ namespace SimpleEcommerce.Mappings
             // Đảm bảo Category và Talent đã được eager load trong Service
             CreateMap<Product, ProductResponseDto>()
                 .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
-                .ForMember(dest => dest.TalentName, opt => opt.MapFrom(src => src.Talent.Name));
+                .ForMember(dest => dest.TalentName, opt => opt.MapFrom(src => src.Talent.TalentName));
 
             // --- Cart Mappings ---
             CreateMap<CartItemRequestDto, Cart>()
