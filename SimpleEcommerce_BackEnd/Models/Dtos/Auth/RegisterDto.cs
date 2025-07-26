@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleEcommerce.Models.Dtos.Auth
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Auth
 {
     public class RegisterDto
     {

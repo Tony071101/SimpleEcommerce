@@ -1,9 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using SimpleEcommerce.Models.Dtos.Auth;
-using SimpleEcommerce.Services.Interfaces;
+using SimpleEcommerce_BackEnd.Models.Dtos.Auth;
+using SimpleEcommerce_BackEnd.Services.Interfaces;
 
-namespace SimpleEcommerce.Controllers
+namespace SimpleEcommerce_BackEnd.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

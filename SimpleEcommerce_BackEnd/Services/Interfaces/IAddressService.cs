@@ -1,6 +1,6 @@
-using SimpleEcommerce.Models.Entities;
+using SimpleEcommerce_BackEnd.Models.Entities;
 
-namespace SimpleEcommerce.Services.Interfaces
+namespace SimpleEcommerce_BackEnd.Services.Interfaces
 {
     public interface IAddressService
     {

@@ -1,4 +1,4 @@
-namespace SimpleEcommerce.Models.Dtos.Product
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Product
 {
     public class ProductResponseDto
     {

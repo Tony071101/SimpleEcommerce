@@ -1,6 +1,6 @@
-using SimpleEcommerce.Models.Dtos.Auth;
+using SimpleEcommerce_BackEnd.Models.Dtos.Auth;
 
-namespace SimpleEcommerce.Services.Interfaces
+namespace SimpleEcommerce_BackEnd.Services.Interfaces
 {
     public interface IAuthService
     {

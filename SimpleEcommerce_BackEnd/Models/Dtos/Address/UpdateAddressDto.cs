@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleEcommerce.Models.Dtos.Address
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Address
 {
     public class UpdateAddressDto
     {

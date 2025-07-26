@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleEcommerce.Models.Dtos.Category
+namespace SimpleEcommerce_BackEnd.Models.Dtos.Category
 {
     public class CreateCategoryDto
     {

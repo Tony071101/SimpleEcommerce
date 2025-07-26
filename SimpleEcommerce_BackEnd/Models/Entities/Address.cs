@@ -1,5 +1,4 @@
-
-namespace SimpleEcommerce.Models.Entities
+namespace SimpleEcommerce_BackEnd.Models.Entities
 {
     public class Address
     {

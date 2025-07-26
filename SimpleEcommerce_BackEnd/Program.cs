@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using SimpleEcommerce.Data;
-using SimpleEcommerce.Mappings;
-using SimpleEcommerce.Models.Entities;
-using SimpleEcommerce.Services;
-using SimpleEcommerce.Services.Interfaces;
+using SimpleEcommerce_BackEnd.Data;
+using SimpleEcommerce_BackEnd.Mappings;
+using SimpleEcommerce_BackEnd.Models.Entities;
+using SimpleEcommerce_BackEnd.Services;
+using SimpleEcommerce_BackEnd.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using SimpleEcommerce.Utilities;
+using SimpleEcommerce_BackEnd.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -91,6 +91,7 @@ builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITalentService, TalentService>();
 
 // Configure CORS
 builder.Services.AddCors(options =>

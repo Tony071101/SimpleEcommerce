@@ -3,11 +3,11 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using SimpleEcommerce.Models.Dtos.Auth;
-using SimpleEcommerce.Models.Entities;
-using SimpleEcommerce.Services.Interfaces;
+using SimpleEcommerce_BackEnd.Models.Dtos.Auth;
+using SimpleEcommerce_BackEnd.Models.Entities;
+using SimpleEcommerce_BackEnd.Services.Interfaces;
 
-namespace SimpleEcommerce.Services
+namespace SimpleEcommerce_BackEnd.Services
 {
     public class AuthService : IAuthService
     {

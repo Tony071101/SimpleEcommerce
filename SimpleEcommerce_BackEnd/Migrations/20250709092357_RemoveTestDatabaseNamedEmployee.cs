@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace SimpleEcommerce.Migrations
+namespace SimpleEcommerce_BackEnd.Migrations
 {
     /// <inheritdoc />
     public partial class RemoveTestDatabaseNamedEmployee : Migration
